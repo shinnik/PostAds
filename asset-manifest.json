@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PostAds/static/css/main.3041ef7f.chunk.css",
+    "main.css": "/PostAds/static/css/main.e30f469a.chunk.css",
     "main.js": "/PostAds/static/js/main.ac730bd6.chunk.js",
     "main.js.map": "/PostAds/static/js/main.ac730bd6.chunk.js.map",
     "runtime~main.js": "/PostAds/static/js/runtime~main.6547c13c.js",
@@ -8,9 +8,9 @@
     "static/js/2.1b05805b.chunk.js": "/PostAds/static/js/2.1b05805b.chunk.js",
     "static/js/2.1b05805b.chunk.js.map": "/PostAds/static/js/2.1b05805b.chunk.js.map",
     "index.html": "/PostAds/index.html",
-    "precache-manifest.15d4a981a5f78e243f390a00e075f519.js": "/PostAds/precache-manifest.15d4a981a5f78e243f390a00e075f519.js",
+    "precache-manifest.d5e9450d0536e60f578ad5417090c02b.js": "/PostAds/precache-manifest.d5e9450d0536e60f578ad5417090c02b.js",
     "service-worker.js": "/PostAds/service-worker.js",
-    "static/css/main.3041ef7f.chunk.css.map": "/PostAds/static/css/main.3041ef7f.chunk.css.map",
+    "static/css/main.e30f469a.chunk.css.map": "/PostAds/static/css/main.e30f469a.chunk.css.map",
     "static/media/arrow-down.svg": "/PostAds/static/media/arrow-down.cc6ab263.svg",
     "static/media/erase.svg": "/PostAds/static/media/erase.d6858d4a.svg",
     "static/media/info.svg": "/PostAds/static/media/info.7195a963.svg",
