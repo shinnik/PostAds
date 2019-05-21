@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PostAds/static/css/main.65dcae34.chunk.css",
+    "main.js": "/PostAds/static/js/main.fa144c4b.chunk.js",
+    "main.js.map": "/PostAds/static/js/main.fa144c4b.chunk.js.map",
+    "runtime~main.js": "/PostAds/static/js/runtime~main.6547c13c.js",
+    "runtime~main.js.map": "/PostAds/static/js/runtime~main.6547c13c.js.map",
+    "static/js/2.bf5fc167.chunk.js": "/PostAds/static/js/2.bf5fc167.chunk.js",
+    "static/js/2.bf5fc167.chunk.js.map": "/PostAds/static/js/2.bf5fc167.chunk.js.map",
+    "index.html": "/PostAds/index.html",
+    "precache-manifest.e2e83739e4d55e190bb82ca8b0dc4e9b.js": "/PostAds/precache-manifest.e2e83739e4d55e190bb82ca8b0dc4e9b.js",
+    "service-worker.js": "/PostAds/service-worker.js",
+    "static/css/main.65dcae34.chunk.css.map": "/PostAds/static/css/main.65dcae34.chunk.css.map",
+    "static/media/arrow-down.svg": "/PostAds/static/media/arrow-down.cc6ab263.svg",
+    "static/media/erase.svg": "/PostAds/static/media/erase.d6858d4a.svg",
+    "static/media/info.svg": "/PostAds/static/media/info.7195a963.svg",
+    "static/media/invalid.svg": "/PostAds/static/media/invalid.e06d0a84.svg",
+    "static/media/location.svg": "/PostAds/static/media/location.4e914679.svg",
+    "static/media/phone.svg": "/PostAds/static/media/phone.2ffbaf4d.svg",
+    "static/media/valid.svg": "/PostAds/static/media/valid.2151cce6.svg"
+  }
+}
