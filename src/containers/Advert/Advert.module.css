@@ -1,0 +1,31 @@
+
+.InputWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 29px;
+    /*align-items: center;*/
+}
+
+.LabelWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.FileInputWrapper {
+    width: 638px;
+    display: flex;
+    flex-direction: column;
+}
+
+.PictureInfoWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 23px;
+    height: 52px;
+    /*align-items: center;*/
+}
+
+.PictureNameWrapper {
+    display: flex;
+    flex-direction: column;
+}

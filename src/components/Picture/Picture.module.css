@@ -1,0 +1,15 @@
+.Mini {
+    max-width: 69px;
+    max-height: 52px;
+}
+
+.Tag {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Middle {
+    max-width: 332px;
+    max-height: 250px;
+}

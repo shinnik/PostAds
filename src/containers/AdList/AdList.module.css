@@ -1,0 +1,38 @@
+.AdList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.WrapperOne {
+    display: flex;
+    flex-direction: column;
+    width: 332px;
+}
+
+.WrapperTwo {
+    display: flex;
+    flex-direction: column;
+    width: 203px;
+    margin-left: 103px;
+    list-style: none;
+    padding: 0;
+}
+
+.RemoveEditButtons {
+    margin-top: auto;
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    width: 638px;
+    margin-bottom: 78px;
+}
+
+.UserDataItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
