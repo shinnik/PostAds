@@ -14,10 +14,19 @@ export const setText = (id, text) => {
     }
 };
 
-export const uploadFile = (file) => {
-    return {
-        type: actions.UPLOAD_FILE,
-        files: file
+export const uploadFile = (files) => {
+    return dispatch => {
+        const file = files[0];
+        const img = document.createElement('img');
+        const name = file.name;
+        img.onload = () => {
+            dispatch({
+                type: actions.UPLOAD_FILE,
+                payload: {img, name}
+            })
+        }
+        const blob = URL.createObjectURL(file);
+        img.src = blob;
     }
 };
 
@@ -28,7 +37,6 @@ export const cancelPicture = () => {
 };
 
 export const applyAdvert = () => {
-    console.log('clicked');
     return {
         type: actions.APPLY_ADVERT
     }

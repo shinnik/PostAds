@@ -3,6 +3,7 @@ import { fromJS } from 'immutable';
 import { shortFileName } from "../../utils/shortFileName";
 import ID from "../../utils/ID";
 import { initialState } from "./initialState";
+import getBase64Image from "../../utils/getBase64Image";
 
 
 const advertReducer = (state = initialState, action) => {
@@ -73,13 +74,24 @@ const advertReducer = (state = initialState, action) => {
             return state;
         }
         case actions.UPLOAD_FILE: {
-            const file = action.files[0];
-            const name = file.name;
+            const file = getBase64Image(action.payload.img);
+            console.log(file);
+            const name = action.payload.name;
             const sfn = shortFileName(name);
-            const blob = URL.createObjectURL(file);
-            state = state.setIn(['attachment', 'file'], blob)
+            // const img = document.createElement('img');
+            // img.src = file;
+            // const dataURL = getBase64Image(img);
+            // console.log(dataURL);
+            // const reader = new FileReader();
+            // reader.readAsDataURL(file);
+            // reader.onloadend = function() {
+            //     const src = reader.result;
+            //     console.log(src);
+            // };
+            state = state.setIn(['attachment', 'file'], file)
                 .setIn(['attachment', 'filename'], name)
                 .setIn(['attachment', 'shortfn'], sfn);
+            console.log('ATTCH', state.getIn(['attachment', 'file']));
             return state
         }
         case actions.CANCEL_PICTURE: {
