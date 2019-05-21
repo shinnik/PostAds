@@ -39,13 +39,11 @@ const advertReducer = (state = initialState, action) => {
                             .setIn(['inputs', idx, 'text'], 'Заполнено')
                     }
                     const allValid = state.getIn(['inputs']).every((el) => el.get('status') === 'valid');
-                    console.log(allValid);
                     state = allValid ? state.setIn(['button', 'disable'], false) : state.setIn(['button', 'disable'], true);
                     return state
                 }
                 case 'Phone': {
                     const format = formatPhoneNumber(content);
-                    console.log(format);
                     if (content.length === 0) {
                         state = state.setIn(['inputs', idx, 'status'], 'invalid')
                             .setIn(['inputs', idx, 'text'], 'Заполните поле')
@@ -88,7 +86,6 @@ const advertReducer = (state = initialState, action) => {
             return state;
         }
         case actions.APPLY_ADVERT: {
-            console.log('Applying...');
             const allValid = state.getIn(['inputs']).every((el) => el.get('status') === 'valid');
 
             const advert = {
@@ -108,12 +105,10 @@ const advertReducer = (state = initialState, action) => {
                 } else {
                     if (state.get('edit')) {
                         const idx = ads.findIndex((ad) => ad.id === state.get('id'));
-                        console.log('EDIT');
                         ads.splice(idx, 1);
                         advert.id = state.get('id');
                         ads.splice(idx, 0, advert)
                     } else {
-                        console.log('PUSH', ads);
                         ads.push(advert);
                     }
                     localStorage.setItem('ads', JSON.stringify(ads));
@@ -128,7 +123,6 @@ const advertReducer = (state = initialState, action) => {
             return state;
         }
         case actions.DELETE_ADVERT: {
-            console.log(action.id);
             const ads = JSON.parse(localStorage.getItem('ads'));
             const idx = ads.findIndex((ad) => ad.id === action.id);
             ads.splice(idx, 1);
@@ -140,7 +134,6 @@ const advertReducer = (state = initialState, action) => {
             state = initialState;
             const ads = JSON.parse(localStorage.getItem('ads'));
             const advert = ads.find((ad) => ad.id === action.id);
-            console.log(advert);
             state = state.setIn(['inputs', 0, 'content'], advert.header)
                 .setIn(['inputs', 0, 'text'], 'Заполнено')
                 .setIn(['inputs', 0, 'status'], 'valid')

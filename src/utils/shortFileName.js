@@ -1,7 +1,6 @@
 
 export function shortFileName (filename, newLength = 10) {
     if (typeof filename === 'string') {
-        console.log(filename.length, 'LENGTH');
         if (filename.length <= newLength + 1) {
             return filename;
         } else {
