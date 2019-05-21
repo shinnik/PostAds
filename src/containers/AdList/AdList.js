@@ -29,9 +29,9 @@ class AdList extends Component {
             <>
                 <Text className='AdListHeader' size='L'>Объявления</Text>
                 <ul className={styles.AdList}>
-                {this.ads.map((ad) => {
+                {this.ads.map((ad, index) => {
                     return (
-                        <li id={ad.id} className={styles.Container}>
+                        <li key={index} id={ad.id} className={styles.Container}>
                             <div className={styles.WrapperOne}>
                                 <Text size='M'>{ad.header}</Text>
                                 <Text className='AdvBodyText'name={ad.id} >{ad.body}</Text>

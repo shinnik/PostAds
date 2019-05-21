@@ -28,7 +28,6 @@ class Advert extends Component {
     }
 
     render() {
-        console.log(typeof this.props.attachment.getIn(['file']));
         return (
             <>
                 <Text size='L'>Подать объявление</Text>
@@ -46,7 +45,7 @@ class Advert extends Component {
                                        placeholder={inp.get('placeholder')}/>
                                 <Icon id={inp.get('name')}
                                       iconType={inp.get('status')}/>
-                                <Text validator={inp.get('status')}>{inp.get('text')}</Text>
+                                <Text className={'for'+inp.get('id')} validator={inp.get('status')}>{inp.get('text')}</Text>
                             </div>
                         </div>
                     )

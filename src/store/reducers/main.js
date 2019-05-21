@@ -1,9 +1,9 @@
 import * as actions from '../actions/actionTypes';
-import { fromJS } from 'immutable';
 import { shortFileName } from "../../utils/shortFileName";
 import ID from "../../utils/ID";
 import { initialState } from "./initialState";
 import getBase64Image from "../../utils/getBase64Image";
+import {formatPhoneNumber} from "../../utils/formatPhoneNumber";
 
 
 const advertReducer = (state = initialState, action) => {
@@ -24,7 +24,6 @@ const advertReducer = (state = initialState, action) => {
                             .setIn(['inputs', idx, 'text'], 'Заполнено')
                     }
                     const allValid = state.getIn(['inputs']).every((el) => el.get('status') === 'valid');
-                    console.log(allValid);
                     state = allValid ? state.setIn(['button', 'disable'], false) : state.setIn(['button', 'disable'], true);
                     return state
                 }
@@ -45,13 +44,15 @@ const advertReducer = (state = initialState, action) => {
                     return state
                 }
                 case 'Phone': {
-                    const regexp = /^\+7+(\([0-9]{3}\)+[0-9]{3}-[0-9]{2}-[0-9]{2})$/;
+                    const format = formatPhoneNumber(content);
+                    console.log(format);
                     if (content.length === 0) {
                         state = state.setIn(['inputs', idx, 'status'], 'invalid')
                             .setIn(['inputs', idx, 'text'], 'Заполните поле')
-                    } else if (content.match(regexp)) {
+                    } else if (format) {
                         state = state.setIn(['inputs', idx, 'status'], 'valid')
                             .setIn(['inputs', idx, 'text'], 'Заполнено')
+                            .setIn(['inputs', idx, 'content'], format)
                     } else {
                         state = state.setIn(['inputs', idx, 'status'], 'invalid')
                             .setIn(['inputs', idx, 'text'], 'Неверный формат')
@@ -75,23 +76,11 @@ const advertReducer = (state = initialState, action) => {
         }
         case actions.UPLOAD_FILE: {
             const file = getBase64Image(action.payload.img);
-            console.log(file);
             const name = action.payload.name;
             const sfn = shortFileName(name);
-            // const img = document.createElement('img');
-            // img.src = file;
-            // const dataURL = getBase64Image(img);
-            // console.log(dataURL);
-            // const reader = new FileReader();
-            // reader.readAsDataURL(file);
-            // reader.onloadend = function() {
-            //     const src = reader.result;
-            //     console.log(src);
-            // };
             state = state.setIn(['attachment', 'file'], file)
                 .setIn(['attachment', 'filename'], name)
                 .setIn(['attachment', 'shortfn'], sfn);
-            console.log('ATTCH', state.getIn(['attachment', 'file']));
             return state
         }
         case actions.CANCEL_PICTURE: {

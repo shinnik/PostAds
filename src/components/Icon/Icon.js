@@ -9,7 +9,10 @@ import styles from './Icon.module.css'
 const Icon = ({ id, iconType, className,
                   onClickAction, ...attrs }) => {
 
-
+    const labelStyles = classNames(
+        styles['Wrapper'],
+        styles[iconType]
+    )
 
     const iconStyles = classNames(
         styles['Icon'],
@@ -19,7 +22,7 @@ const Icon = ({ id, iconType, className,
 
     return (
         <>
-            <label onClick={onClickAction} className={styles.Wrapper} htmlFor={id}>
+            <label onClick={onClickAction} className={labelStyles} htmlFor={id}>
                 <img id={id} className={iconStyles}
                      src={iconTypes[iconType]}
                      alt={iconType}

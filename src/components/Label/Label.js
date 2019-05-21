@@ -24,5 +24,6 @@ Label.propTypes = {
 
 Label.defaultProps = {
     className: '',
-    htmlFor: null
+    htmlFor: null,
+    children: ''
 };

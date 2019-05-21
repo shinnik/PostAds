@@ -54,4 +54,35 @@
     height: 40px;
     cursor: pointer;
 }
+.Wrapper.info {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 18px;
+}
+
+.Wrapper.valid {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 18px;
+}
+
+.Wrapper.invalid {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 18px;
+}
+
+.Wrapper.phone {
+    cursor: default;
+}
+
+.Wrapper.location {
+    cursor: default;
+}
 
